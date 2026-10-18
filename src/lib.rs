@@ -1,10 +1,10 @@
 //! # Mr. Handy
 //! 
-//! A small and simple utility crate made by me for me, but if you like it - feel free to use it just remember to stick to the [LICENSE](LICENSE).
+//! A small and simple utility crate made by me for me, but if you like it - feel free to use it just remember to stick to the [LICENSE](https://github.com/TaXi0k/mr_handy/blob/master/LICENSE).
 
 // =================================
 
-pub mod macros;
+mod macros;
 
 // =================================
 
@@ -29,13 +29,13 @@ pub fn pause() {
 /// 
 /// * `prompt` - The question or message to display to the user.
 /// * `default` - Specifies the behavior when the user hits Enter without typing:
-///   * `Some(true)` — Defaults to `true` (displays `[Y/n]`).
-///   * `Some(false)` — Defaults to `false` (displays `[y/N]`).
-///   * `None` — No default; forces the user to provide a valid answer (`[y/n]`).
+///   * `Some(true)` - Defaults to `true` (displays `[Y/n]`).
+///   * `Some(false)` - Defaults to `false` (displays `[y/N]`).
+///   * `None` - No default; forces the user to provide a valid answer (`[y/n]`).
 /// 
 /// # Returns
 /// 
-/// * `bool` — Returns `true` for affirmative input (`y`, `yes`) or the default value, and `false` for negative input (`n`, `no`).
+/// * `bool` - Returns `true` for affirmative input (`y`, `yes`), `false` for negative input (`n`, `no`), or the provided `default` value if the user hits Enter with empty input.
 /// 
 /// # Examples
 /// 

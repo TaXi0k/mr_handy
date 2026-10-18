@@ -1,7 +1,7 @@
 /// Prints formatted data to stdout and flushes the stream immediately
 /// 
 /// Combines `print!` and `.flush()` to ensure output renders instantly 
-/// without waiting for a newline—essential for inline prompts.
+/// without waiting for a newline - essential for inline prompts.
 /// 
 /// Intended to be `println!` without the newline at the end.
 #[macro_export]
@@ -15,7 +15,7 @@ macro_rules! printf {
 
 /// Reads a line from standard input into a `String`.
 /// 
-/// Intended to work pretty much like Python's input().
+/// Intended to work pretty much like Python's `input()`.
 /// 
 /// ## Behavior & Arguments
 /// * **No arguments:** Automatically prints a default prompt (`>> `).
@@ -52,7 +52,7 @@ macro_rules! input {
 
 /// Reads a line from standard input into a `String`, returning an `Result<String, std::io::Error>`.
 /// 
-/// Intended to work pretty much like Python's input() but with errors.
+/// Intended to work pretty much like Python's `input()` but with errors.
 /// 
 /// ## Behavior & Arguments
 /// * **No arguments:** Automatically prints a default prompt (`>> `) using [`printf!`].
