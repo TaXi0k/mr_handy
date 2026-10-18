@@ -1,8 +1,13 @@
 [package]
 name = "mr_handy"
+description = "Small and simple utility crate made by me for me."
+authors = ["TaXi0k"]
+
+readme = "README.md"
+repository = "https://github.com/TaXi0k/mr_handy"
+license = "Apache-2.0"
+
 version = "0.1.0"
 edition = "2024"
-authors = ["TaXi0k"]
-license = "Apache-2.0"
 
 [dependencies]
