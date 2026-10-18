@@ -1,20 +1,50 @@
+//! # Mr. Handy
+//! 
+//! A small and simple utility crate made by me for me, but if you like it - feel free to use it just remember to stick to the [LICENSE](LICENSE).
+
 // =================================
 
 pub mod macros;
 
 // =================================
 
+/// Sleeps the current thread for the specified duration.
+/// 
+/// A thin wrapper around `std::thread::sleep` to save a few boilerplate keystrokes.
 pub fn delay(millis: u64) {
     std::thread::sleep(
         std::time::Duration::from_millis(millis)
     );
 }
 
+/// Pauses execution until the user presses Enter.
 pub fn pause() {
-    crate::printf!("Press [Enter] to continue...");
-    let _ = crate::input!("");
+    let _ = crate::input!("Press [Enter] to continue... ");
 }
 
+
+/// Prompts the user with a yes/no question and waits for confirmation.
+/// 
+/// # Arguments
+/// 
+/// * `prompt` - The question or message to display to the user.
+/// * `default` - Specifies the behavior when the user hits Enter without typing:
+///   * `Some(true)` — Defaults to `true` (displays `[Y/n]`).
+///   * `Some(false)` — Defaults to `false` (displays `[y/N]`).
+///   * `None` — No default; forces the user to provide a valid answer (`[y/n]`).
+/// 
+/// # Returns
+/// 
+/// * `bool` — Returns `true` for affirmative input (`y`, `yes`) or the default value, and `false` for negative input (`n`, `no`).
+/// 
+/// # Examples
+/// 
+/// ```no_run
+/// // Prompts "Are you sure? [Y/n]: "
+/// if confirm("Are you sure?", Some(true)) {
+///     println!("Action executed!");
+/// }
+/// ```
 pub fn confirm(prompt: &str, default: Option<bool>) -> bool {
 
     let (indicator, default_value) = match default {

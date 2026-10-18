@@ -2,5 +2,7 @@
 name = "mr_handy"
 version = "0.1.0"
 edition = "2024"
+authors = ["TaXi0k"]
+license = "Apache-2.0"
 
 [dependencies]

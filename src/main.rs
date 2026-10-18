@@ -1,4 +1,4 @@
-use mr_handy::{self, confirm, input, pause, printf};
+use mr_handy::{confirm, input, pause, printf};
 
 fn main() {
     printf!("Input: {}", input!("user# "));
